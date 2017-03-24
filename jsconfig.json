@@ -1,0 +1,15 @@
+{
+    "typeAcquisition": {
+        "enable": true,
+        "include": [
+            "express",
+            "mongo",
+            "mongoose",
+            "expect",
+            "faker",
+            "mocha",
+            "nodemon",
+            "supertest"
+        ]
+    }
+}
