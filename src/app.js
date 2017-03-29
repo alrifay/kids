@@ -115,6 +115,12 @@ app.get('/Topics/:id', (request, response) => {
 app.get('/Topics', (request, response) => {
 	Topic.find().then(topics => {
 		if (topics) {
+			if (request.query.short && request.query.short == 'true') {
+				topics.map(topic => {
+					if (topic.body.length > 100)
+						topic.body = topic.body.slice(0, 100) + '...';
+				});
+			}
 			response.send({
 				topics,
 				status: 'OK'
